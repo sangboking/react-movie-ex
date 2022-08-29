@@ -1,8 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Reset } from "styled-reset";
+import Nav from "./components/Nav";
 
-function App() {
-  return <div className="App" />;
+export default function App() {
+  return (
+    <div style={{ height: "100rem" }}>
+      <Reset />
+
+      <Nav />
+    </div>
+  );
 }
-
-export default App;

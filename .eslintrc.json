@@ -9,7 +9,7 @@
   },
   "extends": ["airbnb", "plugin:prettier/recommended"],
   "rules": {
-      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+      "react/jsx-filename-extension": [1, { "extensions": ["js", "jsx"] }],
       "import/no-unresolved": "off",
       "react/prop-types": 0,
       "no-use-before-define":"off",
@@ -38,6 +38,7 @@
       "react/destructuring-assignment": "off",
       "no-octal-escape": "off",
       "no-unused-expressions": "off",
-      "react/react-in-jsx-scope":"off"
+      "import/no-named-as-default" :"off",
+      "import/no-named-as-default-member" : "off"
   }
 }
