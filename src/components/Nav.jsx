@@ -39,15 +39,15 @@ const NavContainer = styled.nav`
   position: fixed;
   top: 0;
   width: 100%;
-  height: 2rem;
+  height: 30px;
   z-index: 1;
-  padding: 1.5rem;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition-timing-function: ease-in;
   transition: all 0.5s;
-  background-color: ${props => (props.show ? "#111" : "#fff")};
+  background-color: ${props => (props.show ? "#111" : "none")};
 `;
 
 const NavLogo = styled.img`
