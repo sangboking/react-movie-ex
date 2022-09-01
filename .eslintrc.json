@@ -37,7 +37,6 @@
       "no-empty":"off",
       "react/destructuring-assignment": "off",
       "no-octal-escape": "off",
-      "no-unused-expressions": "off",
       "import/no-named-as-default" :"off",
       "import/no-named-as-default-member" : "off"
   }
