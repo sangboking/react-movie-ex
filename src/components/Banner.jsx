@@ -56,29 +56,25 @@ export default function Banner() {
         <BannerFadeBottom />
       </BannerWrapper>
     );
-  }else {
-    return (
-      <Container>
-        <HomeContainer>
-         <Iframe
-          width="640"
-          height="360"
-          src={`https://www.youtube.com/embed/${movie.videos.results[0].key}
-          ?controls=0&autoplay=1&loop=1&mute=1&playlist=${movie.videos.results[0].key}`}
-          title="YouTube video player"
-          frameborder="0"
-          allow="autoplay; fullscreen"
-          allowfullscreen
-         >
-
-         </Iframe>
-        </HomeContainer>
-      </Container>
-    )
+  } else {
+      return (
+        <Container>
+          <HomeContainer>
+          <Iframe
+            width="640"
+            height="360"
+            src={`https://www.youtube.com/embed/${movie.videos.results[0].key}
+            ?controls=0&autoplay=1&loop=1&mute=1&playlist=${movie.videos.results[0].key}`}
+            title="YouTube video player"
+            frameborder="0"
+            allow="autoplay; fullscreen"
+            allowfullscreen
+          />
+          </HomeContainer>
+        </Container>
+      )
+    }   
   }
-  
-  
-}
 
 const BannerWrapper = styled.section`
   background-position: top center;
