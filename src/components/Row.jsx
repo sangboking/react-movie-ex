@@ -1,14 +1,13 @@
 import axios from "../api/axios";
 import React, { useEffect, useState } from "react";
+import "./Row.css";
 
 export default function Row({title, id, fetchURL, isLargeRow}) {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     fetchMovieData();
-  }, [])
-
-  console.log(movies)
+  }, []) 
 
   const fetchMovieData = async() => {
     const request = await axios.get(fetchURL);
@@ -16,11 +15,15 @@ export default function Row({title, id, fetchURL, isLargeRow}) {
   };
 
   return (
-    <section>
+    <section className="row">
       <h2>{title}</h2>
       <div className="slider">
         <div className="slider__arrow-left">
-          <span className="arrow">
+          <span className="arrow"
+            onClick={() => {
+              document.getElementById(id).scrollLeft -= window.innerWidth - 80;
+            }}
+          >
             {"<"}
           </span>
         </div>
@@ -38,7 +41,11 @@ export default function Row({title, id, fetchURL, isLargeRow}) {
         ))}
         </div>
         <div className="slider__arrow-right">
-          <span className="arrow">{">"}</span>
+          <span className="arrow"
+            onClick={() => {
+              document.getElementById(id).scrollLeft += window.innerWidth - 80;
+            }}
+          >{">"}</span>
         </div>
       </div>
 
