@@ -1,14 +1,14 @@
 import React from "react";
-import { Reset } from "styled-reset";
+import "./App.css";
 import requests from "./api/requests";
 import Banner from "./components/Banner";
 import Nav from "./components/Nav";
 import Row from "./components/Row";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <div style={{ height: "100rem" }}>
-      <Reset />
+    <div className="app">
 
       <Nav />
       <Banner />
@@ -42,6 +42,8 @@ export default function App() {
         id="CM"
         fetchURL={requests.fetchComedyMovies}
       />
+
+      <Footer />
     </div>
   );
 }
