@@ -37,7 +37,6 @@ export default function MovieModal({
             <p className='modal__overview'>평점 : {vote_average}</p>
             <p className='modal__overview'>{overview}</p>
           </div>
-
         </div>
       </div>
     </div>
