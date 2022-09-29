@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 export default function Nav() {
   const [show, setShow] = useState(false);
+  const [searchValue, setSearchValue] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -19,12 +22,24 @@ export default function Nav() {
     };
   }, []);
 
+  const handleChange = (e) => {
+    setSearchValue(e.target.value);
+    navigate(`/search?q=${e.target.value}`);
+  };
+
   return (
     <NavContainer show={show}>
       <NavLogo
         alt="Netflx logo"
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/170px-Netflix_2015_logo.svg.png"
-        onClick={() => window.location.reload()}
+        onClick={() => navigate('/')}
+      />
+
+      <SearchInput 
+        value={searchValue}
+        onChange={handleChange}
+        type="text"
+        placeholder="영화를 검색해주세요."
       />
 
       <NavAvatar
@@ -55,6 +70,18 @@ const NavLogo = styled.img`
   left: 2rem;
   width: 5rem;
   object-fit: contain;
+  cursor: pointer;
+`;
+
+const SearchInput = styled.input`
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: #000000c7;
+  border-radius: 5px;
+  color: white;
+  padding: 5px;
+  border: none;
 `;
 
 const NavAvatar = styled.img`
