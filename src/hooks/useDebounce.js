@@ -8,9 +8,9 @@ export const useDebounce = (value, delay) => {
       setDebounceValue(value)
     }, delay);
   
-   return () => {
-    clearTimeout(handler);
-   };
+    return () => {
+      clearTimeout(handler);
+    };
   }, [value, delay]);
   
   return debounceValue;
