@@ -15,7 +15,7 @@ export default function MovieModal({
   const ref = useRef();
 
   useOnclickOutside(ref,() => {
-    setModalOpen(false)
+    setModalOpen(false);
   });
 
   return (
