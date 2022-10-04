@@ -11,6 +11,7 @@ export default function DetailPage() {
       const request = await axios.get(
         `/movie/${movieId}`
       );
+      console.log(request)
       setMovie(request.data);
     };
 
